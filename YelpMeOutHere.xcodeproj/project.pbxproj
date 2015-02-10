@@ -14,6 +14,8 @@
 		BAD7A2921A89B290003ED7D7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAD7A2911A89B290003ED7D7 /* Images.xcassets */; };
 		BAD7A2951A89B290003ED7D7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAD7A2931A89B290003ED7D7 /* LaunchScreen.xib */; };
 		BAD7A2A11A89B290003ED7D7 /* YelpMeOutHereTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD7A2A01A89B290003ED7D7 /* YelpMeOutHereTests.swift */; };
+		BAE9EC5D1A89BE510045AE27 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE9EC5C1A89BE510045AE27 /* Venue.swift */; };
+		BAE9EC601A89CCEF0045AE27 /* VenueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE9EC5F1A89CCEF0045AE27 /* VenueCell.swift */; };
 		D3857290B2B6F58CD1F8B0D7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB7B30B1F77DC4AB8B2A06E5 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +45,8 @@
 		BAD7A29A1A89B290003ED7D7 /* YelpMeOutHereTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YelpMeOutHereTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD7A29F1A89B290003ED7D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAD7A2A01A89B290003ED7D7 /* YelpMeOutHereTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpMeOutHereTests.swift; sourceTree = "<group>"; };
+		BAE9EC5C1A89BE510045AE27 /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
+		BAE9EC5F1A89CCEF0045AE27 /* VenueCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,9 +117,10 @@
 		BAD7A2871A89B290003ED7D7 /* YelpMeOutHere */ = {
 			isa = PBXGroup;
 			children = (
+				BAE9EC5E1A89CCBD0045AE27 /* Controllers */,
+				BAE9EC5B1A89BE350045AE27 /* Models */,
 				BA6E7B951A89B8FD0074D10E /* API */,
 				BAD7A28A1A89B290003ED7D7 /* AppDelegate.swift */,
-				BAD7A28C1A89B290003ED7D7 /* ViewController.swift */,
 				BAD7A28E1A89B290003ED7D7 /* Main.storyboard */,
 				BAD7A2911A89B290003ED7D7 /* Images.xcassets */,
 				BAD7A2931A89B290003ED7D7 /* LaunchScreen.xib */,
@@ -147,6 +152,23 @@
 				BAD7A29F1A89B290003ED7D7 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BAE9EC5B1A89BE350045AE27 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BAE9EC5C1A89BE510045AE27 /* Venue.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		BAE9EC5E1A89CCBD0045AE27 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BAD7A28C1A89B290003ED7D7 /* ViewController.swift */,
+				BAE9EC5F1A89CCEF0045AE27 /* VenueCell.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,8 +307,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAD7A28D1A89B290003ED7D7 /* ViewController.swift in Sources */,
+				BAE9EC5D1A89BE510045AE27 /* Venue.swift in Sources */,
 				BA8372221A89B74E003F3013 /* YelpClient.swift in Sources */,
 				BAD7A28B1A89B290003ED7D7 /* AppDelegate.swift in Sources */,
+				BAE9EC601A89CCEF0045AE27 /* VenueCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

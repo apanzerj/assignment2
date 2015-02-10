@@ -18,6 +18,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let yelpTokenSecret = "xs6r_hZVXuDb_fmCEKob8_GJTUc"
 
     var client: YelpClient!
+    var businessDictionaries: [Venue] = []
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -27,6 +28,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         venueList.dataSource = self
         venueList.delegate = self
+        
+        client = YelpClient(consumerKey: yelpConsumerKey, consumerSecret: yelpConsumerSecret, accessToken: yelpToken, accessSecret: yelpTokenSecret)
+        client.searchWithTerm("Thai", success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+            var businesses = response["businesses"] as [NSDictionary]
+            for business in businesses {
+                self.businessDictionaries.append(Venue(business: business))
+            }
+            self.venueList.reloadData()
+            }) { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+                println(error)
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -40,11 +52,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return businessDictionaries.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        var cell = venueList.dequeueReusableCellWithIdentifier("aCell") as VenueCell
+        cell.venueTitle.text = businessDictionaries[indexPath.row].vName
+        return cell
     }
 
 
