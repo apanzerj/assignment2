@@ -11,11 +11,22 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var venueList: UITableView!
+
+    let yelpConsumerKey = "-0GKiPla5EC1yPQRVCTjig"
+    let yelpConsumerSecret = "iNZMX5UFSXLkGk8_s8fw4Se_7QI"
+    let yelpToken = "QpdUMlAnUHFmex3Lso7eQPbIEpFFnCHp"
+    let yelpTokenSecret = "xs6r_hZVXuDb_fmCEKob8_GJTUc"
+
+    var client: YelpClient!
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         venueList.dataSource = self
         venueList.delegate = self
-        venueList.layer.borderWidth = 2
         // Do any additional setup after loading the view, typically from a nib.
     }
 

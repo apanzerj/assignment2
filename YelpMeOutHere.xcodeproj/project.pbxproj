@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA8372221A89B74E003F3013 /* YelpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8372211A89B74E003F3013 /* YelpClient.swift */; };
 		BAD7A28B1A89B290003ED7D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD7A28A1A89B290003ED7D7 /* AppDelegate.swift */; };
 		BAD7A28D1A89B290003ED7D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD7A28C1A89B290003ED7D7 /* ViewController.swift */; };
 		BAD7A2901A89B290003ED7D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAD7A28E1A89B290003ED7D7 /* Main.storyboard */; };
 		BAD7A2921A89B290003ED7D7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAD7A2911A89B290003ED7D7 /* Images.xcassets */; };
 		BAD7A2951A89B290003ED7D7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAD7A2931A89B290003ED7D7 /* LaunchScreen.xib */; };
 		BAD7A2A11A89B290003ED7D7 /* YelpMeOutHereTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD7A2A01A89B290003ED7D7 /* YelpMeOutHereTests.swift */; };
+		D3857290B2B6F58CD1F8B0D7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB7B30B1F77DC4AB8B2A06E5 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +28,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0EBC194BBBFD945D9BE451C4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		8B71C1FB6D118036CD720A53 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		AB7B30B1F77DC4AB8B2A06E5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA83721E1A89B712003F3013 /* YelpMeOutHere-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YelpMeOutHere-Bridging-Header.h"; sourceTree = "<group>"; };
+		BA8372211A89B74E003F3013 /* YelpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpClient.swift; sourceTree = "<group>"; };
 		BAD7A2851A89B290003ED7D7 /* YelpMeOutHere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YelpMeOutHere.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD7A2891A89B290003ED7D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAD7A28A1A89B290003ED7D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3857290B2B6F58CD1F8B0D7 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +64,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		449C43A83198775EA204EF5A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8B71C1FB6D118036CD720A53 /* Pods.debug.xcconfig */,
+				0EBC194BBBFD945D9BE451C4 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8BC51A0F136C6D1E0AE0B60F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB7B30B1F77DC4AB8B2A06E5 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BA6E7B951A89B8FD0074D10E /* API */ = {
+			isa = PBXGroup;
+			children = (
+				BA8372211A89B74E003F3013 /* YelpClient.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
 		BAD7A27C1A89B290003ED7D7 = {
 			isa = PBXGroup;
 			children = (
 				BAD7A2871A89B290003ED7D7 /* YelpMeOutHere */,
 				BAD7A29D1A89B290003ED7D7 /* YelpMeOutHereTests */,
 				BAD7A2861A89B290003ED7D7 /* Products */,
+				449C43A83198775EA204EF5A /* Pods */,
+				8BC51A0F136C6D1E0AE0B60F /* Frameworks */,
+				BA83721E1A89B712003F3013 /* YelpMeOutHere-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,6 +113,7 @@
 		BAD7A2871A89B290003ED7D7 /* YelpMeOutHere */ = {
 			isa = PBXGroup;
 			children = (
+				BA6E7B951A89B8FD0074D10E /* API */,
 				BAD7A28A1A89B290003ED7D7 /* AppDelegate.swift */,
 				BAD7A28C1A89B290003ED7D7 /* ViewController.swift */,
 				BAD7A28E1A89B290003ED7D7 /* Main.storyboard */,
@@ -119,9 +156,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BAD7A2A41A89B290003ED7D7 /* Build configuration list for PBXNativeTarget "YelpMeOutHere" */;
 			buildPhases = (
+				42DD475A42E647BFFAD3563A /* Check Pods Manifest.lock */,
 				BAD7A2811A89B290003ED7D7 /* Sources */,
 				BAD7A2821A89B290003ED7D7 /* Frameworks */,
 				BAD7A2831A89B290003ED7D7 /* Resources */,
+				8008726CBDED1454FD057FDB /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -207,12 +246,46 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		42DD475A42E647BFFAD3563A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8008726CBDED1454FD057FDB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BAD7A2811A89B290003ED7D7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				BAD7A28D1A89B290003ED7D7 /* ViewController.swift in Sources */,
+				BA8372221A89B74E003F3013 /* YelpClient.swift in Sources */,
 				BAD7A28B1A89B290003ED7D7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -334,21 +407,28 @@
 		};
 		BAD7A2A51A89B290003ED7D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B71C1FB6D118036CD720A53 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = YelpMeOutHere/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "YelpMeOutHere-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		BAD7A2A61A89B290003ED7D7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0EBC194BBBFD945D9BE451C4 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = YelpMeOutHere/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "YelpMeOutHere-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -405,6 +485,7 @@
 				BAD7A2A61A89B290003ED7D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BAD7A2A71A89B290003ED7D7 /* Build configuration list for PBXNativeTarget "YelpMeOutHereTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +494,7 @@
 				BAD7A2A91A89B290003ED7D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
