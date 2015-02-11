@@ -38,22 +38,20 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dxv-EY-8MT">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dxv-EY-8MT">
                                                     <rect key="frame" x="8" y="30" width="230" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="48" id="oXP-Gv-8bc"/>
-                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="Dxv-EY-8MT" firstAttribute="leading" secondItem="C8E-vd-BbF" secondAttribute="leading" id="6oe-pH-eFN"/>
                                                 <constraint firstItem="C8E-vd-BbF" firstAttribute="leading" secondItem="scP-4q-1kK" secondAttribute="leadingMargin" id="9Zh-9R-dTl"/>
                                                 <constraint firstItem="C8E-vd-BbF" firstAttribute="top" secondItem="scP-4q-1kK" secondAttribute="topMargin" constant="4" id="C1c-we-8lH"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Dxv-EY-8MT" secondAttribute="bottom" constant="40" id="MHt-96-SeO"/>
-                                                <constraint firstItem="Dxv-EY-8MT" firstAttribute="leading" secondItem="C8E-vd-BbF" secondAttribute="leading" id="U4j-uf-T1v"/>
-                                                <constraint firstItem="Dxv-EY-8MT" firstAttribute="centerY" secondItem="scP-4q-1kK" secondAttribute="centerY" constant="-9" id="VCG-fV-oZa"/>
+                                                <constraint firstItem="Dxv-EY-8MT" firstAttribute="trailing" secondItem="C8E-vd-BbF" secondAttribute="trailing" id="K7c-Bc-XUS"/>
+                                                <constraint firstItem="Dxv-EY-8MT" firstAttribute="top" secondItem="scP-4q-1kK" secondAttribute="topMargin" constant="22" id="Ph7-aJ-GFu"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Dxv-EY-8MT" secondAttribute="bottom" constant="40" id="e6I-CD-tPy"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="C8E-vd-BbF" secondAttribute="trailing" constant="74" id="jlV-yh-iQc"/>
                                             </constraints>
                                         </tableViewCellContentView>

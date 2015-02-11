@@ -49,6 +49,7 @@
 		BAE9EC5C1A89BE510045AE27 /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		BAE9EC5F1A89CCEF0045AE27 /* VenueCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueCell.swift; sourceTree = "<group>"; };
 		BAED390C1A8AFB65003A62A6 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		BAED390E1A8B06E3003A62A6 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +125,7 @@
 				BA6E7B951A89B8FD0074D10E /* API */,
 				BAD7A28A1A89B290003ED7D7 /* AppDelegate.swift */,
 				BAD7A28E1A89B290003ED7D7 /* Main.storyboard */,
+				BAED390E1A8B06E3003A62A6 /* MyPlayground.playground */,
 				BAD7A2911A89B290003ED7D7 /* Images.xcassets */,
 				BAD7A2931A89B290003ED7D7 /* LaunchScreen.xib */,
 				BAD7A2881A89B290003ED7D7 /* Supporting Files */,

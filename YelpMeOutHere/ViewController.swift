@@ -87,7 +87,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }else{
             self.isFiltered = true
             self.filteredSearch = self.businessDictionaries.filter({(venue: Venue) -> Bool in
-                return startsWith(venue.vName, searchText)
+                return venue.vName.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch) != nil
             })
         }
     }
@@ -96,14 +96,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.filterContentForSearchText(searchText)
         self.venueList.reloadData()
     }
-    func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchString searchString: String!) -> Bool {
-        self.filterContentForSearchText(searchString)
-        return true
-    }
     
-    func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchScope searchOption: Int) -> Bool {
-        self.filterContentForSearchText(self.searchDisplayController!.searchBar.text)
-        return true
-    }
 }
 
