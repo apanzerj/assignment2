@@ -18,22 +18,26 @@ class Venue: NSObject {
     var neighborhoods: NSArray = []
     var ratingUrl: NSURL = NSURL()
     var numberOfRatings: Int = 0
+
     
     init(business: NSDictionary){
         super.init()
-        
         var url = business.valueForKeyPath("image_url") as String
         self.imageUrl = NSURL(string: url)!
         self.vName = business.valueForKeyPath("name") as String
-        self.crossStreets = business.valueForKeyPath("location.cross_streets") as String
+        if let generalLocation = business.valueForKeyPath("location.cross_streets")? as? String {
+            self.crossStreets = generalLocation
+        }else{
+            let generalLocation = business.valueForKeyPath("location.city")? as String
+            self.crossStreets = generalLocation
+        }
+        //self.crossStreets = business.valueForKeyPath("location.cross_streets")? as String
         self.address = business.valueForKeyPath("location.display_address") as NSArray
         self.neighborhoods = business.valueForKeyPath("location.neighborhoods") as NSArray
         self.ratingUrl = NSURL(string: business.valueForKeyPath("rating_img_url") as String)!
         self.numberOfRatings = business.valueForKeyPath("review_count") as Int!
 
-
     }
-
     
     
 }

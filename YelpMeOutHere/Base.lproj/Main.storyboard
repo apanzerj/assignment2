@@ -51,12 +51,6 @@
                                                         <constraint firstAttribute="height" constant="17" id="SQ5-m4-PHN"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dxv-EY-8MT" userLabel="Cross Streets">
-                                                    <rect key="frame" x="8" y="58" width="230" height="20"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="1000 Reviews" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWY-Mk-8kJ" userLabel="Number of Reviews">
                                                     <rect key="frame" x="100" y="35" width="74" height="11"/>
                                                     <constraints>
@@ -64,6 +58,12 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dxv-EY-8MT" userLabel="Cross Streets">
+                                                    <rect key="frame" x="8" y="49" width="230" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -74,8 +74,8 @@
                                                 <constraint firstItem="Dxv-EY-8MT" firstAttribute="trailing" secondItem="C8E-vd-BbF" secondAttribute="trailing" id="BUd-lr-PzJ"/>
                                                 <constraint firstItem="HWY-Mk-8kJ" firstAttribute="top" secondItem="C8E-vd-BbF" secondAttribute="bottom" constant="4" id="Hxn-SB-2YT"/>
                                                 <constraint firstItem="C8E-vd-BbF" firstAttribute="leading" secondItem="XHC-ND-kF6" secondAttribute="leading" id="Nal-o8-E55"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Dxv-EY-8MT" secondAttribute="bottom" constant="13" id="PWU-uV-fZl"/>
-                                                <constraint firstItem="Dxv-EY-8MT" firstAttribute="top" secondItem="XHC-ND-kF6" secondAttribute="bottom" constant="10" id="Zov-uk-j5v"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Dxv-EY-8MT" secondAttribute="bottom" constant="22" id="PWU-uV-fZl"/>
+                                                <constraint firstItem="Dxv-EY-8MT" firstAttribute="top" secondItem="XHC-ND-kF6" secondAttribute="bottom" constant="1" id="Zov-uk-j5v"/>
                                                 <constraint firstItem="XHC-ND-kF6" firstAttribute="top" secondItem="C8E-vd-BbF" secondAttribute="bottom" id="ji4-bG-yzu"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="C8E-vd-BbF" secondAttribute="trailing" constant="74" id="pEg-nl-7sU"/>
                                                 <constraint firstItem="HWY-Mk-8kJ" firstAttribute="leading" secondItem="XHC-ND-kF6" secondAttribute="trailing" constant="8" symbolic="YES" id="sG7-Z8-b9t"/>
@@ -108,6 +108,15 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OBp-lg-Ull">
+                                <rect key="frame" x="258" y="72" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="wzD-UA-VkA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>

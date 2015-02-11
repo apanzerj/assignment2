@@ -8,22 +8,45 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, UISearchDisplayDelegate {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, UISearchDisplayDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var venueList: UITableView!
     @IBOutlet weak var searchNavBarItem: UINavigationItem!
     @IBOutlet weak var searchBar: UISearchBar!
 
+    let client: YelpClient! = YelpClient(consumerKey: "-0GKiPla5EC1yPQRVCTjig", consumerSecret: "iNZMX5UFSXLkGk8_s8fw4Se_7QI", accessToken: "QpdUMlAnUHFmex3Lso7eQPbIEpFFnCHp", accessSecret: "xs6r_hZVXuDb_fmCEKob8_GJTUc")
 
-    let yelpConsumerKey = "-0GKiPla5EC1yPQRVCTjig"
-    let yelpConsumerSecret = "iNZMX5UFSXLkGk8_s8fw4Se_7QI"
-    let yelpToken = "QpdUMlAnUHFmex3Lso7eQPbIEpFFnCHp"
-    let yelpTokenSecret = "xs6r_hZVXuDb_fmCEKob8_GJTUc"
+    func locationManager(manager: CLLocationManager!, didUpdateToLocation newLocation: CLLocation!, fromLocation oldLocation: CLLocation!) {
+        let currentLocation = manager.location
+        self.client.searchWithTermAndLocation("Thai", location: currentLocation , success: { (request: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+            var businesses = response["businesses"] as [NSDictionary]
+            self.businessDictionaries = []
+            for business in businesses {
+                self.businessDictionaries.append(Venue(business: business))
+            }
+            self.venueList.reloadData()
+            }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+                println("we broke")
+        })
 
-    var client: YelpClient!
+    }
+    @IBAction func buttonClicked(sender: AnyObject) {
+        println(CLLocationManager.authorizationStatus().rawValue)
+        if(CLLocationManager.authorizationStatus() == CLAuthorizationStatus.Authorized || CLLocationManager.authorizationStatus() == CLAuthorizationStatus.AuthorizedWhenInUse ){
+            lManager.requestWhenInUseAuthorization()
+            lManager.desiredAccuracy = kCLLocationAccuracyBest
+            lManager.startUpdatingLocation()
+        }
+        self.venueList.reloadData()
+    }
+
+    
     var businessDictionaries: [Venue] = []
     var filteredSearch: [Venue] = []
-
+    var lManager: CLLocationManager = CLLocationManager()
+    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
+        println("we borked")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,10 +54,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         venueList.delegate = self
         searchBar.delegate = self
         filteredSearch = businessDictionaries
-
+        lManager.delegate = self
         
-        client = YelpClient(consumerKey: yelpConsumerKey, consumerSecret: yelpConsumerSecret, accessToken: yelpToken, accessSecret: yelpTokenSecret)
-        client.searchWithTerm("Thai", success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+
+        self.client.searchWithTerm("Thai", success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
             var businesses = response["businesses"] as [NSDictionary]
             for business in businesses {
                 self.businessDictionaries.append(Venue(business: business))

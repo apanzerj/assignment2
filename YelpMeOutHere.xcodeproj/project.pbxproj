@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BA0B00951A8B24F1004CD40E /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0B00941A8B24F1004CD40E /* SearchResultCell.swift */; };
+		BA80410F1A8BD1A70020F4F5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA80410E1A8BD1A70020F4F5 /* CoreLocation.framework */; };
 		BA8372221A89B74E003F3013 /* YelpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8372211A89B74E003F3013 /* YelpClient.swift */; };
 		BAD7A28B1A89B290003ED7D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD7A28A1A89B290003ED7D7 /* AppDelegate.swift */; };
 		BAD7A28D1A89B290003ED7D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD7A28C1A89B290003ED7D7 /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 		8B71C1FB6D118036CD720A53 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		AB7B30B1F77DC4AB8B2A06E5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA0B00941A8B24F1004CD40E /* SearchResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
+		BA80410E1A8BD1A70020F4F5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		BA83721E1A89B712003F3013 /* YelpMeOutHere-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YelpMeOutHere-Bridging-Header.h"; sourceTree = "<group>"; };
 		BA8372211A89B74E003F3013 /* YelpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpClient.swift; sourceTree = "<group>"; };
 		BAD7A2851A89B290003ED7D7 /* YelpMeOutHere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YelpMeOutHere.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA80410F1A8BD1A70020F4F5 /* CoreLocation.framework in Frameworks */,
 				D3857290B2B6F58CD1F8B0D7 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -85,6 +88,7 @@
 		8BC51A0F136C6D1E0AE0B60F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BA80410E1A8BD1A70020F4F5 /* CoreLocation.framework */,
 				AB7B30B1F77DC4AB8B2A06E5 /* libPods.a */,
 			);
 			name = Frameworks;
