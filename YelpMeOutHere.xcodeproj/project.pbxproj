@@ -16,6 +16,7 @@
 		BAD7A2A11A89B290003ED7D7 /* YelpMeOutHereTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD7A2A01A89B290003ED7D7 /* YelpMeOutHereTests.swift */; };
 		BAE9EC5D1A89BE510045AE27 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE9EC5C1A89BE510045AE27 /* Venue.swift */; };
 		BAE9EC601A89CCEF0045AE27 /* VenueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE9EC5F1A89CCEF0045AE27 /* VenueCell.swift */; };
+		BAED390D1A8AFB65003A62A6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAED390C1A8AFB65003A62A6 /* SearchViewController.swift */; };
 		D3857290B2B6F58CD1F8B0D7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB7B30B1F77DC4AB8B2A06E5 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		BAD7A2A01A89B290003ED7D7 /* YelpMeOutHereTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpMeOutHereTests.swift; sourceTree = "<group>"; };
 		BAE9EC5C1A89BE510045AE27 /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		BAE9EC5F1A89CCEF0045AE27 /* VenueCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueCell.swift; sourceTree = "<group>"; };
+		BAED390C1A8AFB65003A62A6 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 			children = (
 				BAD7A28C1A89B290003ED7D7 /* ViewController.swift */,
 				BAE9EC5F1A89CCEF0045AE27 /* VenueCell.swift */,
+				BAED390C1A8AFB65003A62A6 /* SearchViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAED390D1A8AFB65003A62A6 /* SearchViewController.swift in Sources */,
 				BAD7A28D1A89B290003ED7D7 /* ViewController.swift in Sources */,
 				BAE9EC5D1A89BE510045AE27 /* Venue.swift in Sources */,
 				BA8372221A89B74E003F3013 /* YelpClient.swift in Sources */,

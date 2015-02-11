@@ -13,16 +13,21 @@ class Venue: NSObject {
     var ratingImageUrl: NSURL = NSURL()
     var vName: String = ""
     var numberOfReviews: Int = 0
-    var vAddress: String = ""
+    var address: NSArray = []
     var categories: String = ""
     var distInMiles: CGFloat = 0.0
+    var crossStreets: String = ""
+    var neighborhoods: NSArray = []
     
     init(business: NSDictionary){
         super.init()
         var url = business.valueForKeyPath("image_url") as String
         self.imageUrl = NSURL(string: url)!
-        
         self.vName = business.valueForKeyPath("name") as String
+        self.crossStreets = business.valueForKeyPath("location.cross_streets") as String
+        self.address = business.valueForKeyPath("location.display_address") as NSArray
+        self.neighborhoods = business.valueForKeyPath("location.neighborhoods") as NSArray
+
     }
 
     

@@ -10,6 +10,7 @@ import UIKit
 
 class VenueCell: UITableViewCell {
 
+    @IBOutlet weak var venueCrossStreets: UILabel!
     @IBOutlet weak var venueTitle: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
