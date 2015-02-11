@@ -12,8 +12,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBOutlet weak var venueList: UITableView!
     @IBOutlet weak var searchNavBarItem: UINavigationItem!
-
     @IBOutlet weak var searchBar: UISearchBar!
+
+
     let yelpConsumerKey = "-0GKiPla5EC1yPQRVCTjig"
     let yelpConsumerSecret = "iNZMX5UFSXLkGk8_s8fw4Se_7QI"
     let yelpToken = "QpdUMlAnUHFmex3Lso7eQPbIEpFFnCHp"
@@ -22,16 +23,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var client: YelpClient!
     var businessDictionaries: [Venue] = []
     var filteredSearch: [Venue] = []
-    var isFiltered: Bool = false
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         venueList.dataSource = self
         venueList.delegate = self
-        
-        searchNavBarItem.titleView = searchBar
         searchBar.delegate = self
-        
+        filteredSearch = businessDictionaries
 
         
         client = YelpClient(consumerKey: yelpConsumerKey, consumerSecret: yelpConsumerSecret, accessToken: yelpToken, accessSecret: yelpTokenSecret)
@@ -57,7 +56,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if isFiltered {
+        if tableView == searchDisplayController?.searchResultsTableView {
             return self.filteredSearch.count
         } else {
             return self.businessDictionaries.count
@@ -65,36 +64,33 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = venueList.dequeueReusableCellWithIdentifier("aCell") as VenueCell
         var venue: Venue
-        if isFiltered {
+        if tableView == searchDisplayController?.searchResultsTableView {
             venue = filteredSearch[indexPath.row]
-        } else {
-            venue = businessDictionaries[indexPath.row]
-        }
-        cell.venueTitle.text = venue.vName
-        cell.venueCrossStreets.text = venue.crossStreets
-        return cell
-    }
-    
-    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        self.filterContentForSearchText(searchBar.text)
-        self.venueList.reloadData()
-    }
-    func filterContentForSearchText(searchText: String) {
-        if(searchText == ""){
-            self.isFiltered = false
+            var cell = venueList.dequeueReusableCellWithIdentifier("searchResultCell") as SearchResultTableViewCell
+            cell.resultNameLabel.text = venue.vName
+            return cell
         }else{
-            self.isFiltered = true
-            self.filteredSearch = self.businessDictionaries.filter({(venue: Venue) -> Bool in
-                return venue.vName.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch) != nil
-            })
+            venue = businessDictionaries[indexPath.row]
+            var cell = venueList.dequeueReusableCellWithIdentifier("aCell") as VenueCell
+            cell.venueTitle.text = venue.vName
+            cell.venueCrossStreets.text = venue.crossStreets
+            cell.venueRatingImage.setImageWithURL(venue.ratingUrl)
+            cell.numReviews.text = NSString(format:"%u", venue.numberOfRatings) + " Reviews"
+            return cell
         }
     }
-    
-    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        self.filterContentForSearchText(searchText)
-        self.venueList.reloadData()
+    func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchString searchString: String!) -> Bool {
+        filteredSearch = searchString.isEmpty ? businessDictionaries : businessDictionaries.filter({(venue: Venue) -> Bool in
+            return venue.vName.rangeOfString(searchString, options: .CaseInsensitiveSearch) != nil
+        })
+        return true
+    }
+
+    func filterContentForSearchText(searchText: String) {
+        filteredSearch = businessDictionaries.filter({(venue: Venue) -> Bool in
+            return venue.vName.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch) != nil
+        })
     }
     
 }

@@ -1,20 +1,16 @@
 //
-//  VenueCell.swift
+//  SearchResultTableViewCell.swift
 //  YelpMeOutHere
 //
-//  Created by Adam Panzer on 2/9/15.
+//  Created by Adam Panzer on 2/10/15.
 //  Copyright (c) 2015 Adam Panzer. All rights reserved.
 //
 
 import UIKit
 
-class VenueCell: UITableViewCell {
+class SearchResultTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var numReviews: UILabel!
-    @IBOutlet weak var venueRatingImage: UIImageView!
-    @IBOutlet weak var venueCrossStreets: UILabel!
-    @IBOutlet weak var venueTitle: UILabel!
-
+    @IBOutlet weak var resultNameLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

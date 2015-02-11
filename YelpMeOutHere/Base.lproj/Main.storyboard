@@ -36,31 +36,74 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8E-vd-BbF">
-                                                    <rect key="frame" x="8" y="12" width="230" height="21"/>
+                                                    <rect key="frame" x="8" y="10" width="230" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="Hhx-nZ-Fjn"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dxv-EY-8MT">
-                                                    <rect key="frame" x="8" y="30" width="230" height="21"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="500" verticalHuggingPriority="500" translatesAutoresizingMaskIntoConstraints="NO" id="XHC-ND-kF6" userLabel="Ratings Image">
+                                                    <rect key="frame" x="8" y="31" width="84" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="84" id="RtT-7t-fhb"/>
+                                                        <constraint firstAttribute="height" constant="17" id="SQ5-m4-PHN"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dxv-EY-8MT" userLabel="Cross Streets">
+                                                    <rect key="frame" x="8" y="58" width="230" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="1000 Reviews" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWY-Mk-8kJ" userLabel="Number of Reviews">
+                                                    <rect key="frame" x="100" y="35" width="74" height="11"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="74" id="wSk-c5-2bh"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Dxv-EY-8MT" firstAttribute="leading" secondItem="C8E-vd-BbF" secondAttribute="leading" id="6oe-pH-eFN"/>
-                                                <constraint firstItem="C8E-vd-BbF" firstAttribute="leading" secondItem="scP-4q-1kK" secondAttribute="leadingMargin" id="9Zh-9R-dTl"/>
-                                                <constraint firstItem="C8E-vd-BbF" firstAttribute="top" secondItem="scP-4q-1kK" secondAttribute="topMargin" constant="4" id="C1c-we-8lH"/>
-                                                <constraint firstItem="Dxv-EY-8MT" firstAttribute="trailing" secondItem="C8E-vd-BbF" secondAttribute="trailing" id="K7c-Bc-XUS"/>
-                                                <constraint firstItem="Dxv-EY-8MT" firstAttribute="top" secondItem="scP-4q-1kK" secondAttribute="topMargin" constant="22" id="Ph7-aJ-GFu"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Dxv-EY-8MT" secondAttribute="bottom" constant="40" id="e6I-CD-tPy"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="C8E-vd-BbF" secondAttribute="trailing" constant="74" id="jlV-yh-iQc"/>
+                                                <constraint firstItem="C8E-vd-BbF" firstAttribute="leading" secondItem="scP-4q-1kK" secondAttribute="leadingMargin" id="3qq-Di-Qv6"/>
+                                                <constraint firstItem="C8E-vd-BbF" firstAttribute="top" secondItem="scP-4q-1kK" secondAttribute="topMargin" constant="2" id="9I4-pT-F2q"/>
+                                                <constraint firstItem="Dxv-EY-8MT" firstAttribute="leading" secondItem="XHC-ND-kF6" secondAttribute="leading" id="Ajf-Uj-K4T"/>
+                                                <constraint firstItem="Dxv-EY-8MT" firstAttribute="trailing" secondItem="C8E-vd-BbF" secondAttribute="trailing" id="BUd-lr-PzJ"/>
+                                                <constraint firstItem="HWY-Mk-8kJ" firstAttribute="top" secondItem="C8E-vd-BbF" secondAttribute="bottom" constant="4" id="Hxn-SB-2YT"/>
+                                                <constraint firstItem="C8E-vd-BbF" firstAttribute="leading" secondItem="XHC-ND-kF6" secondAttribute="leading" id="Nal-o8-E55"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Dxv-EY-8MT" secondAttribute="bottom" constant="13" id="PWU-uV-fZl"/>
+                                                <constraint firstItem="Dxv-EY-8MT" firstAttribute="top" secondItem="XHC-ND-kF6" secondAttribute="bottom" constant="10" id="Zov-uk-j5v"/>
+                                                <constraint firstItem="XHC-ND-kF6" firstAttribute="top" secondItem="C8E-vd-BbF" secondAttribute="bottom" id="ji4-bG-yzu"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="C8E-vd-BbF" secondAttribute="trailing" constant="74" id="pEg-nl-7sU"/>
+                                                <constraint firstItem="HWY-Mk-8kJ" firstAttribute="leading" secondItem="XHC-ND-kF6" secondAttribute="trailing" constant="8" symbolic="YES" id="sG7-Z8-b9t"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="numReviews" destination="HWY-Mk-8kJ" id="bFu-sF-Oka"/>
                                             <outlet property="venueCrossStreets" destination="Dxv-EY-8MT" id="l3Y-C8-bnG"/>
+                                            <outlet property="venueRatingImage" destination="XHC-ND-kF6" id="Aur-wz-pqE"/>
                                             <outlet property="venueTitle" destination="C8E-vd-BbF" id="44l-yf-IyC"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchResultCell" rowHeight="44" id="Fdn-Pg-Ug8" customClass="SearchResultTableViewCell" customModule="YelpMeOutHere" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fdn-Pg-Ug8" id="pQW-ca-h6O">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFN-TO-RXW">
+                                                    <rect key="frame" x="8" y="13" width="304" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="resultNameLabel" destination="kFN-TO-RXW" id="qsr-Tu-jc6"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -93,7 +136,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="833" y="447"/>
+            <point key="canvasLocation" x="833" y="441"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NzF-Zv-yLr">
