@@ -12,8 +12,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBOutlet weak var venueList: UITableView!
     @IBOutlet weak var searchNavBarItem: UINavigationItem!
-    @IBOutlet weak var searchBar: UISearchBar!
 
+    @IBOutlet weak var searchBar: UISearchBar!
     let yelpConsumerKey = "-0GKiPla5EC1yPQRVCTjig"
     let yelpConsumerSecret = "iNZMX5UFSXLkGk8_s8fw4Se_7QI"
     let yelpToken = "QpdUMlAnUHFmex3Lso7eQPbIEpFFnCHp"

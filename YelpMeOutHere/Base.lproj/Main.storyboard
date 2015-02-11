@@ -20,10 +20,13 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Ami-cH-6wn">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" id="QFG-g4-vH0">
-                                    <rect key="frame" x="0.0" y="262" width="320" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="8pN-tm-SOA">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="vXZ-lx-hvc" id="MCQ-Bs-wZT"/>
+                                    </connections>
                                 </searchBar>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="aCell" rowHeight="100" id="usT-As-mpL" customClass="VenueCell" customModule="YelpMeOutHere" customModuleProvider="target">
@@ -73,12 +76,22 @@
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="ccf-4v-qQM" userLabel="Search"/>
                     <connections>
-                        <outlet property="searchBar" destination="QFG-g4-vH0" id="WDd-SA-7J4"/>
+                        <outlet property="searchBar" destination="8pN-tm-SOA" id="ghm-MP-AjE"/>
+                        <outlet property="searchDisplayController" destination="xP7-1l-k0n" id="6fs-ZE-0ht"/>
                         <outlet property="searchNavBarItem" destination="ccf-4v-qQM" id="EBt-sc-0Al"/>
                         <outlet property="venueList" destination="Ami-cH-6wn" id="Cnb-VE-TXO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="xP7-1l-k0n">
+                    <connections>
+                        <outlet property="delegate" destination="vXZ-lx-hvc" id="dk8-XE-JEl"/>
+                        <outlet property="searchBar" destination="8pN-tm-SOA" id="d2j-S8-5Vt"/>
+                        <outlet property="searchContentsController" destination="vXZ-lx-hvc" id="y1t-gY-a7x"/>
+                        <outlet property="searchResultsDataSource" destination="vXZ-lx-hvc" id="Z7y-ra-8Sn"/>
+                        <outlet property="searchResultsDelegate" destination="vXZ-lx-hvc" id="Mhp-lm-jIC"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="833" y="447"/>
         </scene>
@@ -97,7 +110,6 @@
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kqh-dF-L8f" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationItem title="Search" id="nUi-4F-ol8" userLabel="Search"/>
             </objects>
             <point key="canvasLocation" x="301" y="447"/>
         </scene>
