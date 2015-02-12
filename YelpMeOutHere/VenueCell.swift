@@ -10,6 +10,9 @@ import UIKit
 
 class VenueCell: UITableViewCell {
 
+    @IBOutlet weak var venueAddress: UILabel!
+    @IBOutlet weak var venueImage: UIImageView!
+    @IBOutlet weak var distInMiles: UILabel!
     @IBOutlet weak var numReviews: UILabel!
     @IBOutlet weak var venueRatingImage: UIImageView!
     @IBOutlet weak var venueCrossStreets: UILabel!

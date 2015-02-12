@@ -10,19 +10,25 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, UISearchDisplayDelegate, CLLocationManagerDelegate {
 
+    
+    
     @IBOutlet weak var venueList: UITableView!
     @IBOutlet weak var searchNavBarItem: UINavigationItem!
     @IBOutlet weak var searchBar: UISearchBar!
 
+    
     let client: YelpClient! = YelpClient(consumerKey: "-0GKiPla5EC1yPQRVCTjig", consumerSecret: "iNZMX5UFSXLkGk8_s8fw4Se_7QI", accessToken: "QpdUMlAnUHFmex3Lso7eQPbIEpFFnCHp", accessSecret: "xs6r_hZVXuDb_fmCEKob8_GJTUc")
 
     func locationManager(manager: CLLocationManager!, didUpdateToLocation newLocation: CLLocation!, fromLocation oldLocation: CLLocation!) {
         let currentLocation = manager.location
         self.client.searchWithTermAndLocation("Thai", location: currentLocation , success: { (request: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
-            var businesses = response["businesses"] as [NSDictionary]
+            self.lManager.stopUpdatingLocation()
             self.businessDictionaries = []
-            for business in businesses {
-                self.businessDictionaries.append(Venue(business: business))
+            var json = JSON(response)
+            let businesses = json["businesses"]
+            
+            for (id, business) in businesses {
+                self.businessDictionaries.append(Venue(business:business))
             }
             self.venueList.reloadData()
             }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
@@ -30,8 +36,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         })
 
     }
+
     @IBAction func buttonClicked(sender: AnyObject) {
-        println(CLLocationManager.authorizationStatus().rawValue)
         if(CLLocationManager.authorizationStatus() == CLAuthorizationStatus.Authorized || CLLocationManager.authorizationStatus() == CLAuthorizationStatus.AuthorizedWhenInUse ){
             lManager.requestWhenInUseAuthorization()
             lManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -40,7 +46,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.venueList.reloadData()
     }
 
-    
+    var placeholder: UIImage = UIImage(named: "placeholder.png")!
     var businessDictionaries: [Venue] = []
     var filteredSearch: [Venue] = []
     var lManager: CLLocationManager = CLLocationManager()
@@ -52,15 +58,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         venueList.dataSource = self
         venueList.delegate = self
+        venueList.estimatedRowHeight = 115
+        venueList.rowHeight = UITableViewAutomaticDimension
         searchBar.delegate = self
         filteredSearch = businessDictionaries
         lManager.delegate = self
         
 
         self.client.searchWithTerm("Thai", success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
-            var businesses = response["businesses"] as [NSDictionary]
-            for business in businesses {
-                self.businessDictionaries.append(Venue(business: business))
+            var json: JSON = JSON(response)
+            let businesses = json["businesses"]
+            
+            for (id, business) in businesses {
+                self.businessDictionaries.append(Venue(business:business))
             }
             self.venueList.reloadData()
             }) { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
@@ -97,9 +107,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             venue = businessDictionaries[indexPath.row]
             var cell = venueList.dequeueReusableCellWithIdentifier("aCell") as VenueCell
             cell.venueTitle.text = venue.vName
-            cell.venueCrossStreets.text = venue.crossStreets
             cell.venueRatingImage.setImageWithURL(venue.ratingUrl)
             cell.numReviews.text = NSString(format:"%u", venue.numberOfRatings) + " Reviews"
+            if(venue.distInMiles != "0.0"){
+                cell.distInMiles.text = venue.distInMiles + " Miles"
+            }else{
+                cell.distInMiles.text = ""
+            }
+            cell.venueImage.setImageWithURLRequest(NSURLRequest(URL: venue.imageUrl), placeholderImage: self.placeholder, success: { (request: NSURLRequest!, response: NSHTTPURLResponse!, image: UIImage!) -> Void in
+                cell.venueImage.image = image
+            }, failure: nil)
+            cell.venueAddress.text = venue.address
             return cell
         }
     }
@@ -114,6 +132,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         filteredSearch = businessDictionaries.filter({(venue: Venue) -> Bool in
             return venue.vName.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch) != nil
         })
+    }
+
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var vc = segue.destinationViewController as FilterViewController
+        vc.foo = "asdf"
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     
 }
