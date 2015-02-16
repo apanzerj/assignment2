@@ -31,7 +31,7 @@ Time spent: `25`
 
 ### Walkthrough
 
-![Video Walkthrough](...)
+![](https://raw.githubusercontent.com/apanzerj/assignment2/master/yelpApp.gif)
 
 
 
