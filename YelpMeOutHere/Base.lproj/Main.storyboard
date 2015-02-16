@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="fMw-Ed-78I">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -195,9 +196,33 @@
                     <view key="view" contentMode="scaleToFill" id="js1-uX-yN3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="9ua-8G-ygL">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="settingCell" id="dJy-Fe-6jf" customClass="SettingsTableViewCell" customModule="YelpMeOutHere" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dJy-Fe-6jf" id="C6e-qM-c0H">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9ua-8G-ygL" firstAttribute="top" secondItem="js1-uX-yN3" secondAttribute="topMargin" id="IbX-Ql-Snt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9ua-8G-ygL" secondAttribute="trailing" constant="-16" id="LLz-QR-HUf"/>
+                            <constraint firstItem="9ua-8G-ygL" firstAttribute="leading" secondItem="js1-uX-yN3" secondAttribute="leadingMargin" constant="-16" id="PTu-2t-F84"/>
+                            <constraint firstItem="jDf-V1-rXI" firstAttribute="bottom" secondItem="9ua-8G-ygL" secondAttribute="bottomMargin" constant="8" id="qjQ-tw-BV0"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="T2R-QX-vCL"/>
+                    <connections>
+                        <outlet property="settingsList" destination="9ua-8G-ygL" id="292-eH-O25"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hkp-qw-VLQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

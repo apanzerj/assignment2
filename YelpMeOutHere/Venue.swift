@@ -49,21 +49,3 @@ class Venue: NSObject {
     }
     
 }
-
-//        self.crossStreets = self.checkWithFallback("location.cross_streets", secondaryKey: "location.city", place: business)
-//        //self.crossStreets = business.valueForKeyPath("location.cross_streets")? as String
-//        self.address = business.valueForKeyPath("location.display_address") as NSArray
-//        if let hood = business.valueForKeyPath("location.neighborhoods") as? NSArray {
-//            println("found a neighborhood")
-//        }else{
-//            println("no hood")
-//        }
-//
-//        if let dist = business.valueForKeyPath("distance") as? CGFloat {
-//            self.distInMiles = dist * 0.000621371
-//        }else{
-//            self.distInMiles = 0
-//        }
-//
-//        self.ratingUrl = NSURL(string: business.valueForKeyPath("rating_img_url") as String)!
-//        self.numberOfRatings = business.valueForKeyPath("review_count") as Int!

@@ -8,12 +8,14 @@
 
 import UIKit
 
-class FilterViewController: UIViewController {
-    var foo:String = ""
+class FilterViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
+    @IBOutlet weak var settingsList: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        println(foo)
-
+        settingsList.dataSource = self
+        settingsList.delegate = self
+        settingsList.rowHeight = UITableViewAutomaticDimension
         // Do any additional setup after loading the view.
     }
 
@@ -21,8 +23,19 @@ class FilterViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 5
+    }
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell = UITableViewCell()
+        return cell
+    }
 
+
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
     /*
     // MARK: - Navigation
 
